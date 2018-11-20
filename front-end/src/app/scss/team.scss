@@ -1,0 +1,136 @@
+@import '_styles.scss';
+
+.team-page {
+  height: 100%;
+}
+
+.team-list-image {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 100px;
+  margin: 0;
+}
+
+.team-content {
+  margin-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-list {
+  width: 90%;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.single-person {
+  width: 36vmin;
+  float: left;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 5vmin 0 5vmin;
+  .gray-header {
+    width: 100%;
+    font-size: 1.9vw;
+    margin: 0;
+    margin-top: 5%;
+  }
+}
+.job {
+  width: 100%;
+  height: 8vmin;
+  font-size: 1.2vw;
+  font-family: $font-bold;
+  color: $agile-purple;
+}
+
+.team-list-image {
+  background-size: cover;
+  background-position: center;
+}
+
+.person {
+  height: auto;
+  display: inline-flex;
+}
+
+.image-section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 5% 0 0 5%;
+  .team-list-image {
+    width: 50vmin;
+    height: 50vmin;
+    border-radius: 25vmin;
+  }
+  .job {
+    font-size: 3vmin;
+    width: 90%;
+  }
+  .contact {
+    transform: none;
+    width: 100%;
+    font-size: 3vmin;
+    margin: 0;
+  }
+  .contact-hidden {
+    display: none;
+  }
+}
+
+.down {
+  margin: 0;
+}
+
+.person-description {
+  height: 100%;
+  margin-bottom: 10%;
+  .gray-header {
+    margin: 5% 5% 2% 5%;
+  }
+  p {
+    font-family: $font-light;
+    font-size: 3vmin;
+    margin: 0 15% 1% 5%;
+    color: $agile-purple;
+    font-weight: bolder;
+  }
+}
+
+.person-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20%;
+}
+
+.single-person-mobile {
+  width: 36vmin;
+  float: left;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 5vmin 0 5vmin;
+  .gray-header {
+    width: 100%;
+    font-size: 3vw;
+    margin: 0;
+    margin-top: 5%;
+  }
+  .job {
+    font-size: 2vmin;
+    height: 7vmin;
+    width: 65%;
+  }
+}

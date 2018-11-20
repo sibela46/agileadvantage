@@ -1,0 +1,75 @@
+// main: index.scss
+
+@font-face {
+font-family: 'Myriad Pro Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Regular'), url('/fonts/MYRIADPRO-REGULAR.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Myriad Pro Semibold';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Semibold'), url('fonts/MYRIADPRO-SEMIBOLD.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Myriad Pro Light';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Light'), url('fonts/MyriadPro-Light.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Myriad Pro Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Bold'), url('fonts/MYRIADPRO-BOLD.woff') format('woff');
+}
+
+$font-primary: 'Myriad Pro Regular', sans-serif;
+$font-semibold: 'Myriad Pro Semibold', sans-serif;
+$font-bold: 'Myriad Pro Bold', sans-serif;
+$font-light: 'Myriad Pro Light', sans-serif;
+$agile-purple: #2e2652;
+$gray: #757575;
+$light-gray: #b3b3b3;
+
+// // main: index.scss
+//
+// @font-face {
+// font-family: 'Myriad Pro Regular';
+// font-style: normal;
+// font-weight: normal;
+// src: local('Myriad Pro Regular'), url('/fonts/MyriadPro-Regular.otf') format('opentype');
+// }
+//
+// @font-face {
+// font-family: 'Myriad Pro Semibold';
+// font-style: normal;
+// font-weight: normal;
+// src: local('Myriad Pro Semibold'), url('fonts/MyriadPro-BoldIt.otf') format('opentype');
+// }
+//
+// @font-face {
+// font-family: 'Myriad Pro Light';
+// font-style: normal;
+// font-weight: normal;
+// src: local('Myriad Pro Light'), url('fonts/MyriadPro-It.otf') format('opentype');
+// }
+//
+// @font-face {
+// font-family: 'Myriad Pro Bold';
+// font-style: normal;
+// font-weight: normal;
+// src: local('Myriad Pro Bold'), url('fonts/MyriadPro-Bold.otf') format('opentype');
+// }
+//
+// $font-primary: 'Myriad Pro Regular', sans-serif;
+// $font-semibold: 'Myriad Pro Semibold', sans-serif;
+// $font-bold: 'Myriad Pro Bold', sans-serif;
+// $font-light: 'Myriad Pro Light', sans-serif;
+// $agile-purple: #2e2652;
+// $gray: #757575;
+// $light-gray: #b3b3b3;

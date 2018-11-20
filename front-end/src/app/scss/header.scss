@@ -1,0 +1,161 @@
+@import '_styles.scss';
+
+.header{
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  height: 15%;
+  background-color: $agile-purple;
+  display: inline-flex;
+  align-items: flex-end;
+}
+
+.logo {
+  width: 20%;
+  height: 100%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+  float: left;
+}
+
+.header-logo {
+  width: 100%;
+}
+
+.small-logo {
+  position: fixed;
+  display: none;
+  width: 9vmin;
+}
+
+.navigation {
+  width: 100%;
+  height: 100%;
+  margin-right: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-field {
+  height: 100%;
+  width: 15%;
+  float: right;
+  margin-right: 2%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 7vmin;
+  }
+}
+
+.active {
+  span {
+    border: 0.2vmin solid white;
+  }
+}
+
+.nav-items {
+  height: 50%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  a {
+    display: block;
+    outline: 0;
+    font-size: 2.2vmin;
+    font-family: $font-semibold;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    transition: border-width 0.1s ease-in;
+    padding: 5px 1vmin 5px 1vmin;
+    span {
+      padding: 5px 1vmin 5px 1vmin;
+      &:hover {
+        border-bottom: 0.2vmin solid white;
+      }
+    }
+  }
+  a::-moz-focus-inner {
+    border: 0;
+    outline: 0;
+  }
+}
+
+
+.search-box {
+  text-decoration: none;
+  border: none;
+  width: 8vmin;
+  border-bottom: 0.7px solid white;
+  padding: 5px;
+  display: flex;
+  font-family: $font-primary;
+  background: $agile-purple;
+  color: white;
+  &:focus {
+    outline: none;
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 3;
+  height: 50px;
+  width: 100%;
+  background-color: $agile-purple;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vmin;
+  span {
+    font-family: $font-light;
+    margin: 1%;
+    height: 50%;
+  }
+  h1 {
+    width: 30%;
+    font-size: 2vmin;
+    font-family: $font-bold;
+    margin: 1%;
+  }
+}
+
+.agile-company {
+  width: 50%;
+  margin: 2%;
+  display: flex;
+  align-items: center;
+}
+
+.footer-info {
+  width: 50%;
+  margin: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  h1 {
+    width: auto;
+    font-family: $font-light;
+    font-weight: normal;
+  }
+  h2 {
+    font-size: 2vmin;
+    font-family: $font-semibold;
+    margin-left: 5px;
+  }
+}

@@ -1,0 +1,365 @@
+@import '_styles.scss';
+
+.single-service-page {
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $font-light;
+  p {
+    color: $agile-purple;
+    width: 50%;
+    text-align: left;
+  }
+  .contact {
+    transform: translateY(-150%);
+  }
+}
+
+.contact-hidden {
+  display: none;
+}
+
+.single-service-page-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .gray-header {
+    margin-left: 0;
+  }
+  .contact {
+    margin-right: 0;
+    margin-top: 5%;
+  }
+  .single-service-info {
+    margin: 5%;
+    text-align: center;
+    p {
+      width: 100%;
+    }
+  }
+}
+
+.single-service-info {
+  text-align: left;
+  margin-left: 40%;
+  p {
+    color: $agile-purple;
+    width: 80%;
+    text-align: left;
+  }
+}
+
+.services-list {
+  padding: 0;
+  margin-left: 5%;
+  width: 90%;
+  box-sizing: border-box;
+  margin: 0 5% 0 5%;
+  color: white;
+  img {
+    margin: 0 2% 0 2%;
+    height: 16vw;
+    border-radius: 10px;
+  }
+  span {
+    position: absolute;
+    text-align: center;
+    align-self: center;
+    width: 25%;
+    font-family: $font-light;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 2vw;
+    text-shadow: 1px 1px 10px #222;
+  }
+}
+
+.services-list-mobile {
+  padding: 0;
+  margin-left: 5%;
+  width: 70%;
+  box-sizing: border-box;
+  margin: 0 5% 0 5%;
+  color: white;
+  img {
+    height: 35vw;
+    border-radius: 10px;
+  }
+  span {
+    position: absolute;
+    text-align: center;
+    align-self: center;
+    width: 100%;
+    font-family: $font-light;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 4vw;
+    text-shadow: 1px 1px 10px #222;
+  }
+  .single-service {
+    width: 100%;
+    height: 35vw;
+  }
+}
+
+.single-service {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 24vw;
+  height: 16vw;
+  margin: 0 3% 3% 3%;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.middle {
+  width: 60%;
+}
+
+.gray-header {
+  color: $gray;
+  font-family: $font-light;
+  font-weight: bold;
+  font-size: 6vmin;
+}
+
+.contact {
+  margin-right: 50%;
+  button {
+    cursor: pointer;
+    background: $agile-purple;
+    text-decoration: none;
+    border: none;
+    padding: 12px 60px 12px 60px;
+    font-size: 0.7em;
+    color: white;
+    font-family: $font-semibold;
+    &:focus {
+      outline: 1px solid black;
+    }
+  }
+}
+
+.contact-page {
+  height: 100%;
+}
+
+.contact-banner {
+  background: url("../img/Banners/AAC-contact.jpg");
+  background-position: 100% 70%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.contact-content {
+  display: flex;
+  width: 80%;
+  float: right;
+  flex-direction: column;
+  align-items: flex-start;
+  h1 {
+    font-size: 7vmin;
+    width: 85%;
+    text-align: center;
+  }
+  p {
+    width: 85%;
+    text-align: center;
+    font-size: 2.5vmin;
+    color: $agile-purple;
+    font-family: $font-primary;
+    margin: 0;
+    margin-bottom: 2%;
+  }
+}
+
+.mobile {
+  width: 100%;
+  align-items: center;
+  p {
+    font-size: 2.4vmin;
+    color: $agile-purple;
+    font-family: $font-primary;
+    margin: 0;
+    margin-bottom: 2%;
+  }
+  #contact-form {
+    transform: none;
+  }
+  h1 {
+    margin-left: 0;
+  }
+}
+
+#contact-form {
+  width: 50%;
+  transform: translateX(35%);
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  .gray-header {
+    margin: 0;
+    margin-bottom: 2%;
+  }
+}
+
+.name-fields {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.form-group {
+  width: 50%;
+  padding: 10px 0 10px 0;
+  margin: 2%;
+  font-family: $font-primary;
+  input {
+    text-decoration: none;
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid black;
+    color: $agile-purple;
+    font-size: 2.5vmin;
+    &:focus {
+      outline: none;
+    }
+  }
+  ::placeholder {
+    color: $agile-purple;
+    font-style: $font-primary;
+  }
+}
+
+.company-name {
+  margin: 2%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  input {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.message-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 95%;
+  margin: 2px 0 8% 0;
+  label {
+    font-size: 2.5vmin;
+    color: $agile-purple;
+    margin: 2% 2% 2% 0;
+  }
+  textarea {
+    border: 1px solid $agile-purple;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.submit {
+  margin: 0;
+  font-family: $font-light;
+}
+
+
+.contact-details {
+  margin: 5% 0 0 5%;
+  width: 20%;
+  position: absolute;
+  color: $agile-purple;
+  h2 {
+    font-family: $font-bold;
+    font-size: 0.9em;
+    margin: 0;
+  }
+  p {
+    font-size: 0.8em;
+    margin: 0;
+  }
+  .spaced {
+    margin-top: 5%;
+  }
+}
+
+.contact-details-mobile {
+  margin: 5% 0 0 5%;
+  width: 95%;
+  position: relative;
+  margin-bottom: 5%;
+  text-align: center;
+  color: $agile-purple;
+  h2 {
+    font-family: $font-bold;
+    font-size: 0.9em;
+    margin: 0;
+  }
+  p {
+    font-size: 0.8em;
+    margin: 0;
+  }
+  .spaced {
+    margin-top: 5%;
+  }
+}
+
+.contact-page-details {
+  margin: 5% 0 0 5%;
+  width: 20%;
+  position: absolute;
+  color: $agile-purple;
+  h2 {
+    font-family: $font-bold;
+    font-size: 0.9em;
+    margin: 0;
+  }
+  p {
+    font-size: 0.8em;
+    margin: 0;
+  }
+  .spaced {
+    margin-top: 5%;
+  }
+}
+.past-companies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ul {
+    padding: 0;
+  }
+  h2 {
+    margin-top: 10%;
+    font-family: $font-primary;
+    font-weight: normal;
+    font-size: 3.5vw;
+  }
+}
+.companies-list {
+  margin-top: 5%;
+  width: 50%;
+  img {
+    margin: 1%;
+  }
+}

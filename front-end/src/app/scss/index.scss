@@ -1,0 +1,33 @@
+@import '_styles.scss';
+
+#root, html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.routes {
+  margin-top: 5%;
+}
+.body-hero {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 15%;
+}
+
+p {
+  font-family: $font-semibold;
+}
+
+.active {
+  // border: 1px solid white;
+}
+
+.mobile {
+  p {
+    font-size: 2px;
+  }
+}
