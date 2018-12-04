@@ -4,6 +4,8 @@ import axios from "axios"
 import {services1} from './data/all-services'
 import './scss/homepage.css'
 import Background from "./img/Banners/AAC-main.jpg"
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -40,8 +42,16 @@ export default class Home extends React.Component {
           "https://public-api.wordpress.com/rest/v1/sites/agileadvantage462538617.wordpress.com/posts"
         )
         .then(res => {
-          console.log(res.data.posts[1]);
-          this.setState({ newestPost: res.data.posts[0], otherPosts: [res.data.posts[1], res.data.posts[2]]});
+          console.log(res.data.posts);
+          if (res.data.posts.length == 3) {
+            this.setState({ newestPost: res.data.posts[0], otherPosts: [res.data.posts[1], res.data.posts[2]]});
+          }
+          else if (res.data.posts.length == 2) {
+            this.setState({ newestPost: res.data.posts[0], otherPosts: [res.data.posts[1]]});
+          }
+          else {
+            this.setState({ newestPost: res.data.posts[0],  otherPosts: [] });
+          }
         })
         .catch(error => console.log(error));
         this.setState({
@@ -51,10 +61,22 @@ export default class Home extends React.Component {
         this.toggleState();
     }
     render() {
+      var isSingle;
+      if (this.state.otherPosts.length == 0) {
+        isSingle = {
+            width: '100%',
+            fontSize: '2.5vw'
+        };
+      }
+      else {
+        isSingle = {};
+      }
       return(
         <div className="mainpage">
           <div className="mainpage-banner" data-aos="fade-down" style={{backgroundImage: `url(${Background})`}}>
-            <h1 className="mainpage-banner-text">Management & strategy consulting firm based in Dubai</h1>
+            <div className="mainpage-banner-text home">
+              <h1>Management & strategy consulting firm based in Dubai</h1>
+            </div>
             <div className="homepage-description">
             <p> <span className="bolder">Agile Advantage Consulting (AA) </span>is a
             management and strategy consulting firm specialising in delivering
@@ -67,14 +89,14 @@ export default class Home extends React.Component {
             <h1 data-aos="fade up">INSIGHTS</h1>
           </div>
           <div className={this.state.isMobile ? "homepage-articles-mobile" : "homepage-articles-list"} data-aos="fade-up">
-            <Link key = {this.state.newestPost.ID} className={this.state.isMobile ? "single-service" : "single-service-main"} to={{
+            <Link key = {this.state.newestPost.ID} style = {isSingle} className={this.state.isMobile ? "single-service" : "single-service-main"} to={{
               pathname: `/insights/${this.state.newestPost.slug}`,
               state: {
                 fromParent: this.state.newestPost
               }
             }}>
             <img src={this.state.newestPost.featured_image} alt="article-img"/>
-            <span>{this.state.newestPost.title}</span>
+            <span style={isSingle}>{this.state.newestPost.title}</span>
             </Link>
             {this.state.otherPosts.map((post) => (
               <Link key = {post.ID} className={"single-service"} to={{
@@ -94,9 +116,7 @@ export default class Home extends React.Component {
             <ul data-aos="fade-right">
               <h2>Advanced Analytics</h2>
               <h2>Change Management</h2>
-              <h2>Corporate Finance</h2>
               <h2>Performance Improvement</h2>
-              <h2>Business Management</h2>
               <h2>Talent, Leadership & Culture</h2>
             </ul>
             </div>

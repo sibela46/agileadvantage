@@ -9,37 +9,60 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: left;
 }
 
 .mainpage-banner {
   width: 100%;
-  height: 27vw;
+  height: 35vw;
   background-size: cover;
   background-position: 90% 40%;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  font-family: $font-light;
+  color: white;
+  text-shadow: 1px 1px 10px #000000;
   h1 {
     width: 85%;
+    text-align: center;
     font-size: 3.5vw;
-    font-family: $font-light;
-    color: white;
-    text-shadow: 1px 1px 10px #000000;
   }
 }
 
+.home {
+  height: 60%;
+  margin-top: 2%;
+}
+
 .mainpage-banner-text {
-  width: 100%;
-  height: 50%;
-  text-align: left;
-  margin-left: 8%;
+  text-align: right;
+  font-family: $font-light;
+  color: white;
+  h1 {
+    width: 100%;
+    margin: 0;
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.5vw;
+  }
+}
+
+.mainpage-banner-text-long {
+  width: 60%;
+  text-align: right;
+  font-family: $font-light;
+  color: white;
+  h2 {
+    margin: 0;
+    font-size: 1.5vw;
+  }
 }
 
 .homepage-description {
-  height: 30vmin;
+  height: 25vmin;
   width: 70%;
   text-decoration: none;
   color: white;
@@ -95,7 +118,8 @@
   text-shadow: 1px 1px 10px #000;
   h1 {
     font-size: 4vw;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
+    margin-top: 2%;
     background-image: url("../img/Banners/AAC-services-home-narrow.jpg");
     background-position: 100% 10%;
     background-size: cover;
@@ -167,7 +191,7 @@
   }
   span {
     position: absolute;
-    width: 40%;
+    width: 30%;
     font-family: $font-semibold;
     font-weight: bold;
     padding: 10px;
@@ -293,7 +317,6 @@
 
 .page-content {
   margin-bottom: 15%;
-  margin-top: 3%;
   p {
     width: 78%;
     margin: 2% 5% 0 8%;
@@ -305,6 +328,7 @@
     }
     h2 {
       margin: 0;
+      margin-bottom: 0;
       font-size: 3vmin;
       font-weight: bold;
     }
@@ -312,9 +336,21 @@
 }
 
 .long {
+  margin: 0;
+  margin-bottom: 2%;
   h1 {
-    width: 60%;
-    margin: 8%;
-    text-align: left;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.terms-page {
+  height: auto;
+  margin-bottom: 12vw;
+  font-family: $font-light;
+  width: 80%;
+  h1 {
+    text-align: center;
+    margin: 5%;
   }
 }

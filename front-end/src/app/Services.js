@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import services from './data/all-services'
-import companyLogos from './data/all-companies'
 import './scss/services.css'
 import Background from './img/Banners/AAC-services.jpg'
 import talent from './img/Banners/AAC-services-talent.jpg'
@@ -45,7 +44,10 @@ export default class Services extends React.Component {
     return (
       <div className="mainpage">
       <div className="mainpage-banner page long" data-aos="fade-down" style={{backgroundImage: `url(${Background})`}}>
-        <h1 className="mainpage-banner-text long">When we get the environment right, humans will do remarkable things.</h1>
+        <div className="mainpage-banner-text-long">
+          <h1>When we get the environment right, humans will do remarkable things.</h1>
+          <h2>Simon Sinek</h2>
+        </div>
       </div>
       <div className="page-content">
         <ul className= {this.state.isMobile ? "services-list-mobile" : "services-list " + middleScreen} data-aos="fade-up">
@@ -61,14 +63,6 @@ export default class Services extends React.Component {
             </Link>
           ))}
         </ul>
-        <h2>Some companies we have worked with in the past:</h2>
-        <div className="past-companies">
-          <ul className="companies-list">
-          {companyLogos.map(({image}) => (
-            <img key={image} src={require(`./img/CompanyLogos/${image}`)} alt="company-logo" width="100px"/>
-          ))}
-          </ul>
-        </div>
       </div>
       </div>
     )

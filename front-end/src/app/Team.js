@@ -13,7 +13,7 @@ export default class Team extends React.Component {
     }
   }
   toggleState() {
-    if (this.state.windowWidth < 750) {
+    if (this.state.windowWidth < 600) {
       this.setState({
         isMobile: true
       });
@@ -42,10 +42,13 @@ export default class Team extends React.Component {
     return (
         <div className="team-page">
           <div className="mainpage-banner page long" data-aos="fade-down" style={{backgroundImage: `url(${Background})`}}>
-            <h1 className="mainpage-banner-text">Our team is based around the world, creating and building connections to better support your business</h1>
+            <div className="mainpage-banner-text-long">
+              <h1>Meet people where they are to take them where they want to go.</h1>
+              <h2>Rachel Hanfling</h2>
+            </div>
           </div>
           <div className="team-content">
-          <ul className="team-list" data-aos="fade-up">
+          <ul className={this.state.isMobile ? "team-list-mobile" : "team-list"} data-aos="fade-up">
           {people.map(({name, id, image, job, description}) => (
             <Link className={this.state.isMobile ? "single-person-mobile" : "single-person"} to={{
               pathname: `/team/${id}`,

@@ -50,8 +50,8 @@ class Header extends React.Component {
         <ul className="nav-items">
           <li><NavLink to="/about"><span>ABOUT</span></NavLink></li>
           <li><NavLink to="/services"><span>SERVICES</span></NavLink></li>
-          <li><NavLink to="/insights"><span>INSIGHTS</span></NavLink></li>
           <li><NavLink to="/team"><span>TEAM</span></NavLink></li>
+          <li><NavLink to="/insights"><span>INSIGHTS</span></NavLink></li>
           <li><NavLink to="/community"><span>COMMUNITY</span></NavLink></li>
           <li><NavLink to="/contact"><span>CONTACT</span></NavLink></li>
         </ul>

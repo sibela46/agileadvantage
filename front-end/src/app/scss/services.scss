@@ -1,7 +1,7 @@
 @import '_styles.scss';
 
 .single-service-page {
-  height: 100%;
+  margin-bottom: 10%;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
     text-align: left;
   }
   .contact {
-    transform: translateY(-150%);
+    transform: translateY(300%);
   }
 }
 
@@ -45,16 +45,24 @@
   text-align: left;
   margin-left: 40%;
   p {
+    font-family: $font-light;
+    font-weight: bold;
     color: $agile-purple;
     width: 80%;
     text-align: left;
   }
+  .bolder {
+    font-family: $font-bold;
+  }
+  h1 {
+    margin: 0;
+  }
 }
 
 .services-list {
-  padding: 0;
   margin-left: 5%;
-  width: 90%;
+  padding-left: 5%;
+  width: 60%;
   box-sizing: border-box;
   margin: 0 5% 0 5%;
   color: white;
@@ -111,7 +119,7 @@
   justify-content: flex-end;
   width: 24vw;
   height: 16vw;
-  margin: 0 3% 3% 3%;
+  margin: 0 2% 2% 2%;
   border-radius: 10px;
   text-decoration: none;
   color: white;
@@ -119,6 +127,7 @@
 
 .middle {
   width: 60%;
+  padding-left: 2%;
 }
 
 .gray-header {
@@ -346,9 +355,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  ul {
-    padding: 0;
-  }
   h2 {
     margin-top: 10%;
     font-family: $font-primary;
@@ -357,7 +363,6 @@
   }
 }
 .companies-list {
-  margin-top: 5%;
   width: 50%;
   img {
     margin: 1%;

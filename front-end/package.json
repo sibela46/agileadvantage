@@ -29,7 +29,8 @@
     "react-router-hash-link": "^1.2.0",
     "react-scripts": "2.0.5",
     "styled-components": "^4.0.2",
-    "sweetalert": "^2.1.2"
+    "sweetalert": "^2.1.2",
+    "universal-cookie": "^3.0.4"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",

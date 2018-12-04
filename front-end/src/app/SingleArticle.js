@@ -71,6 +71,13 @@ export default class SingleArticle extends React.Component {
     var authorName = self.author.first_name + " " + self.author.last_name;
     var authorImage = this.getAuthorDetails(authorName)[1];
     var authorJob = this.getAuthorDetails(authorName)[0];
+    console.log(authorImage);
+    var imageStyle = {};
+    if (authorImage != undefined) {
+      imageStyle = {
+        backgroundImage: `url(${require(`./img/People/${authorImage}`)})`
+      };
+    }
     var title = self.title;
     var image = self.featured_image;
     var tags = Object.keys(self.tags);
@@ -89,14 +96,14 @@ export default class SingleArticle extends React.Component {
         <div className="article-description" dangerouslySetInnerHTML={{__html: self.content}}/>
         <ul className="tags">
           {tags.map((tag) => (
-            <div className="tag">
-            <h2>{tag.toUpperCase()}</h2>
-            </div>
+            <Link className="tag" to='/insights'>
+            {tag.toUpperCase()}
+            </Link>
           ))}
         </ul>
       </div>
       <div className={this.state.isMobile ? "contact-details-mobile" : "contact-details"}>
-        <div className="contact-image"style={{backgroundImage: `url(${require(`./img/People/${authorImage}`)})`}}/>
+        <div className="contact-image"style={imageStyle}/>
         <h2>{authorName.toUpperCase()}</h2>
         <p>{authorJob}</p>
         <div className="contact">

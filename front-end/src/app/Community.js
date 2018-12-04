@@ -27,7 +27,7 @@ export default class Community extends React.Component {
         </p>
         <p>
         <h2 className="heading">AUTISM</h2>
-        For the past 25 years, Naina Biring has been teaching and supporting children with autism in a special needs school in London, UK. This condition develops in early childhood and is characterised by great difficulty in communicating, forming relationships with other people and in using language and abstract concepts. Naina’s wish has been to help many families to understand autism and prepare them for their futures. The number of positive successes over the years has brought so much joy to her and Agile Advantage founder, Steve, that AAC are passionate to place profits from the company into a fund to support those requiring specialist support and do not have the resources to do so in the local MENA region.</p>
+        For the past 25 years, Naina Biring has been teaching and supporting children with autism in a special needs school in London, UK. This condition develops in early childhood and is characterised by great difficulty in communicating, forming relationships with other people and in using language and abstract concepts. Naina’s wish has been to help many families to understand autism and prepare them for their futures. The number of positive successes over the years has brought so much joy to her and Agile Advantage founder, Steve, that AA are passionate to place profits from the company into a fund to support those requiring specialist support and do not have the resources to do so in the local region.</p>
       </div>
       </div>
     )

@@ -1,5 +1,6 @@
 import React from 'react'
 import './scss/header.css'
+import { Link } from 'react-router-dom'
 
 const Footer = () => (
   <div className="footer">
@@ -9,9 +10,9 @@ const Footer = () => (
     <span>All rights reserved</span>
   </div>
   <div className="footer-info">
-    <h1>TERMS AND CONDITIONS</h1>
-    <h1>|</h1>
-    <h1>PRIVACY POLICY</h1>
+    <Link to='/terms-and-conditions'>
+    TERMS AND CONDITIONS
+    </Link>
     <h1>|</h1>
     <h1>WEB DESIGN</h1>
     <h2>chasingshadows.com</h2>

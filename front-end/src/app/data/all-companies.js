@@ -49,6 +49,18 @@ const companyLogos = [
   },
   {
     image: "Vodafone.jpg"
+  },
+  {
+    image: "Barclays-Logo.png"
+  },
+  {
+    image: "Bupa.png"
+  },
+  {
+    image: "dfid-logo.jpg"
+  },
+  {
+    image: "lloyds-banking.jpg"
   }
 ]
 

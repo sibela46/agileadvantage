@@ -85,9 +85,9 @@
   }
 }
 
-.middle {
+.insights-middle {
   width: 60%;
-  padding-left: 9%;
+  padding-left: 5%;
 }
 
 .tags {
@@ -96,18 +96,22 @@
 }
 
 .tag {
+  text-decoration: none;
   display: flex;
   margin: 3px;
-  font-family: $font-bold;
+  font-family: $font-semibold;
   color: $agile-purple;
   border: 1px solid $light-gray;
   border-radius: 1vw;
   padding: 10px;
-  h2 {
-    cursor: pointer;
-    margin: 1px;
-    font-size: 1.2vw;
-  }
+  cursor: pointer;
+  margin: 1px;
+  font-size: 1.2vw;
+}
+
+.active-tag {
+  background-color: $agile-purple;
+  color: white;
 }
 
 .single-article {

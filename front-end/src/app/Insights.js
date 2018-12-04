@@ -53,7 +53,17 @@ export default class Insights extends Component {
   }
   handleTagChange(event) {
     var chosenTag = event.target.innerHTML.toLowerCase();
-    event.target.className += "active-tag";
+    var tags = document.getElementsByClassName('tag');
+    for (var i=0; i < tags.length; i++) {
+      if (tags[i].innerHTML.toLowerCase() == chosenTag) {
+        tags[i].className = (tags[i].className == "tag active-tag") ? "tag" : "tag active-tag";
+      }
+      else {
+        tags[i].className = "tag";
+      }
+    }
+    console.log(chosenTag);
+    chosenTag =   chosenTag.split("(")[0];
     if (chosenTag === this.state.chosenFilter) {
       this.setState({ chosenFilter: "all"});
     }
@@ -128,20 +138,23 @@ export default class Insights extends Component {
   render() {
     var tags = this.getAllTags();
     var filteredPosts = this.getFilteredPosts();
-    var middleScreen = (this.state.windowWidth < 800 && this.state.windowWidth > 600) ? "middle" : "";
+    var middleScreen = (this.state.windowWidth < 800 && this.state.windowWidth > 600) ? "insights-middle" : "";
     return (
       <div className="blog">
       <div className="mainpage-banner page" data-aos="fade-down" style={{backgroundImage: `url(${Background})`, backgroundPosition: "10% 70%"}}>
-        <h1 className="mainpage-banner-text">Change is inevitable, progress is a choice.</h1>
+        <div className="mainpage-banner-text">
+          <h1>The best vision is insight</h1>
+          <h2>Malcolm Forbes</h2>
+        </div>
       </div>
       <div className="blogpage-content">
       <ul className="tags">
         {this.state.tags.map((tag) => (
           <div key={tag}>
             {tags[Object.keys(tags)[Object.keys(tags).indexOf(tag)]] ?
-            <div className="tag" key={tag} >
-              <h2 onClick={this.handleTagChange.bind(this)}>{tag.toUpperCase()}</h2>
-              <h2>({tags[Object.keys(tags)[Object.keys(tags).indexOf(tag)]]})</h2>
+            <div className="tag" key={tag} onClick={this.handleTagChange.bind(this)}>
+              {tag.toUpperCase()}
+              ({tags[Object.keys(tags)[Object.keys(tags).indexOf(tag)]]})
             </div>
             : <div/>
             }

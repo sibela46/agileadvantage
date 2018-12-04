@@ -75,7 +75,9 @@ export default class Contact extends React.Component {
     return (
       <div className="contact-page">
         <div className="mainpage-banner page contact-banner" data-aos="fade-down">
-          <h1 className="mainpage-banner-text">In a global society, communication is the key</h1>
+          <div className="mainpage-banner-text">
+          <h1>In a global society, communication is the key</h1>
+          </div>
         </div>
         <div className={this.state.isMobile ? "contact-content mobile" : "contact-content"}>
         <h1 className="gray-header">CONTACT</h1>
@@ -111,11 +113,6 @@ export default class Contact extends React.Component {
         </div>
         <div className={this.state.isMobile ? "contact-details-mobile" : "contact-details"}>
           <h2>Agile Advantage Consulting DMCC</h2>
-          <p>Unit No: 1589</p>
-          <p>DMCC Business Centre</p>
-          <p>Level No 1 Jewellery & Gemplex, 3</p>
-          <p>Dubai</p>
-          <p>United Arab Emirates</p>
           <p className="spaced">+971 (0) 55 293 2600</p>
           <p className="spaced">info@agileadvantage.consulting</p>
         </div>

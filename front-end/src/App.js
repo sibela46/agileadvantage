@@ -12,6 +12,7 @@ import Team from './app/Team'
 import TeamSingle from './app/TeamSingle'
 import Insights from './app/Insights'
 import SingleArticle from './app/SingleArticle'
+import Terms from './app/Terms'
 
 class App extends React.Component {
   render() {
@@ -29,6 +30,7 @@ class App extends React.Component {
             <Route path='/team/:id' component={TeamSingle}/>
             <Route exact path='/insights' component={Insights}/>
             <Route path='/insights/:id' component={SingleArticle}/>
+            <Route exact path='/terms-and-conditions' component={Terms}/>
             <Route component={Footer}/>
           </div>
         </HashRouter>

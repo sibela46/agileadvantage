@@ -148,7 +148,14 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  a {
+    text-decoration: none;
+    color: white;
+    font-family: $font-light;
+  }
   h1 {
+    text-decoration: none;
+    color: white;
     width: auto;
     font-family: $font-light;
     font-weight: normal;
