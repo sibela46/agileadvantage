@@ -50,7 +50,7 @@ const people = [
     description: ["Steve is brilliant at empowering people to be more of who they essentially are. He is expert host and facilitator who has a real gift in supporting individuals and teams in crafting purpose, identifying values and embodying those values through leadership storytelling. He is hugely pragmatic and values practical application of ideas above all else. Whoever he works with experiences a real and enduring positive impact.", "Steve has been privileged to study with some of the leading lights in the fields of Solution Focus, Narrative Leadership, Value Systems and Complex Adaptive Systems. He sees himself as a weaver. His passion is to weave the insights of you and your colleagues and the threads of proven methods to deliver immediate and practical solutions. He has helped weave solutions for individuals, teams and whole organisations across the globe. Steve has hosted worskshops, events and development consulting in over 15 countries as far apart as USA, South Africa, Ethiopia and across Europe."]
   },
   {
-    name: "NAINA BARING",
+    name: "NAINA BIRING",
     id: "naina",
     image: "Naina-Biring.jpeg",
     job: "ASSOC. DIRECTOR CORPORATE SOCIAL RESPONSIBILITY",

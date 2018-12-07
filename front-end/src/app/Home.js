@@ -64,7 +64,8 @@ export default class Home extends React.Component {
       var isSingle;
       if (this.state.otherPosts.length == 0) {
         isSingle = {
-            width: '100%',
+            width: '80%',
+            paddingLeft: '10%',
             fontSize: '2.5vw'
         };
       }
@@ -96,7 +97,7 @@ export default class Home extends React.Component {
               }
             }}>
             <img src={this.state.newestPost.featured_image} alt="article-img"/>
-            <span style={isSingle}>{this.state.newestPost.title}</span>
+            <span>{this.state.newestPost.title}</span>
             </Link>
             {this.state.otherPosts.map((post) => (
               <Link key = {post.ID} className={"single-service"} to={{
