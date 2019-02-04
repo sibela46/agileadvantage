@@ -11,7 +11,7 @@ export default class Insights extends Component {
     this.state = {
       posts: [],
       chosenFilter: "all",
-      tags: ["insights", "trends", "growth", "news", "strategy", "education"],
+      tags: [],
       windowWidth:  window.document.documentElement.clientWidth,
       isMobile: false
     };
@@ -54,6 +54,7 @@ export default class Insights extends Component {
   handleTagChange(event) {
     var chosenTag = event.target.innerHTML.toLowerCase();
     var tags = document.getElementsByClassName('tag');
+    console.log(tags);
     for (var i=0; i < tags.length; i++) {
       if (tags[i].innerHTML.toLowerCase() == chosenTag) {
         tags[i].className = (tags[i].className == "tag active-tag") ? "tag" : "tag active-tag";
@@ -62,8 +63,7 @@ export default class Insights extends Component {
         tags[i].className = "tag";
       }
     }
-    console.log(chosenTag);
-    chosenTag =   chosenTag.split("(")[0];
+    chosenTag = chosenTag.split("(")[0];
     if (chosenTag === this.state.chosenFilter) {
       this.setState({ chosenFilter: "all"});
     }
@@ -78,8 +78,9 @@ export default class Insights extends Component {
       filteredPosts = this.state.posts.filter(post => {
         var individual = Object.keys(post.tags);
         var indTags = [];
+        console.log(individual);
         for(var i=0; i<individual.length; i++) {
-          indTags.push(individual[i]);
+          indTags.push(individual[i].toLowerCase());
         }
         if (this.state.chosenFilter){
           return (indTags.indexOf(this.state.chosenFilter) >= 0);
@@ -92,43 +93,32 @@ export default class Insights extends Component {
 
     return filteredPosts;
   }
+  handleCheck(val) {
+    return this.state.tags.some(item => val === item);
+  }
   getAllTags() {
     var posts = this.state.posts;
-    var tags = {
-      insights: 0,
-      trends: 0,
-      growth: 0,
-      news: 0,
-      strategy: 0,
-      education: 0
-    }
+    var tags = [];
     for (var i = 0; i < posts.length; i++) {
       var individualTags = posts[i].tags;
       var numTags = Object.keys(individualTags).length;
+      console.log(individualTags);
       for (var j = 0; j < numTags; j++){
         if (!(Object.keys(individualTags).length === 0 && individualTags.constructor === Object)) {
-          var tagName = individualTags[Object.keys(individualTags)[j]].name;
-          switch(tagName) {
-            case "insights":
-              tags.insights ++;
-              break;
-            case "trends":
-              tags.trends ++;
-              break;
-            case "growth":
-              tags.growth ++;
-              break;
-            case "news":
-              tags.news ++;
-              break;
-            case "strategy":
-              tags.strategy ++;
-              break;
-            case "education":
-              tags.education ++;
-              break;
-            default:
-              break;
+          var tagName = individualTags[Object.keys(individualTags)[j]].name.toLowerCase();
+          var tagCount = individualTags[Object.keys(individualTags)[j]].post_count;
+          console.log(tagName);
+          if (!this.handleCheck(tagName)) {
+            this.state.tags.push(tagName);
+          }
+          var exists = false;
+          for (var i=0; i < tags.length; i++) {
+            if (tags[i].name == tagName) {
+              exists = true;
+            }
+          }
+          if (!exists) {
+            tags.push({name: tagName, count: tagCount});
           }
         }
       }
@@ -149,12 +139,12 @@ export default class Insights extends Component {
       </div>
       <div className="blogpage-content">
       <ul className="tags">
-        {this.state.tags.map((tag) => (
+        {tags.map((tag) => (
           <div key={tag}>
-            {tags[Object.keys(tags)[Object.keys(tags).indexOf(tag)]] ?
+            {(tag.count != 0) ?
             <div className="tag" key={tag} onClick={this.handleTagChange.bind(this)}>
-              {tag.toUpperCase()}
-              ({tags[Object.keys(tags)[Object.keys(tags).indexOf(tag)]]})
+              {tag.name.toUpperCase()}
+              ({tag.count})
             </div>
             : <div/>
             }

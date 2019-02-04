@@ -23,7 +23,7 @@ export default class About extends React.Component {
         </div>
       </div>
       <div className="page-content">
-        <p> <span className="bolder">Agile Advantage Consulting (AA) </span>is a
+        <p><span className="bolder">Agile Advantage Consulting (AA) </span>is a
         management and strategy consulting firm specialising in delivering efficient
         and effective professional services to assure high-performance in our clients’
         organisations. AA brings together the talents of international specialists
@@ -46,13 +46,23 @@ export default class About extends React.Component {
         <p>We are a high performing company specialising in SMEs and educational
         organisations. Working with our clients, we will help you find the tools
         you need to achieve the best.</p>
-        <h2>Some companies we have worked with in the past:</h2>
+        <p>
+        <h2 className="heading">OUR MISSION AND VALUES</h2>
+        We ensure our clients reach and exceed their objectives by improving their performance and sustainability through tailored support and direction from our team of highly motivated leaders. Focusing on strengthening their strategy, people and systems, we are driven by our fundamental values:</p>
+        <p><h3 className="heading">TRUSTWORTHINESS</h3>The ability to be relied upon as honest or truthful </p>
+        <p><h3 className="heading">PROFESSIONAL</h3>Each team member holds the necessary qualifications and is competent to offer advice in their area of expertise </p>
+        <p><h3 className="heading">SUPPORTIVE</h3>Each team member is encouraging, understanding and sympathetic to the needs of its stakeholders </p>
+        <p><h3 className="heading">INNOVATIVE</h3>Introducing new ideas and offer original thinking to our stakeholders </p>
+        <p><h3 className="heading">FUN </h3>Enjoying our work and taking great delight at the successes of our stakeholders </p>
         <div className="past-companies">
+        <p style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+        <h2 className="heading">Some companies we have worked with in the past:</h2>
         <ul className="companies-list">
         {companyLogos.map(({image}) => (
           <img key={image} src={require(`./img/CompanyLogos/${image}`)} alt="company-logo" width="80px"/>
         ))}
         </ul>
+        </p>
         </div>
       </div>
       </div>

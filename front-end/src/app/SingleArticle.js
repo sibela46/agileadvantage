@@ -57,21 +57,24 @@ export default class SingleArticle extends React.Component {
     return date.slice(0, 10);
   }
   getAuthorDetails(authorName) {
-    var job_image = []
+    var details = []
     for (var i=0; i < people.length; i++) {
       if (people[i].name === authorName.toUpperCase()) {
-        job_image[0] = people[i].job;
-        job_image[1] = people[i].image;
+        details[0] = people[i].job;
+        details[1] = people[i].image;
+        details[2] = people[i].id;
+        details[3] = people[i].description;
       }
     }
-    return job_image;
+    return details;
   }
   render() {
     let self = this.props.location.state.fromParent;
     var authorName = self.author.first_name + " " + self.author.last_name;
-    var authorImage = this.getAuthorDetails(authorName)[1];
     var authorJob = this.getAuthorDetails(authorName)[0];
-    console.log(authorImage);
+    var authorImage = this.getAuthorDetails(authorName)[1];
+    var authorId = this.getAuthorDetails(authorName)[2];
+    var authorDescription = this.getAuthorDetails(authorName)[3];
     var imageStyle = {};
     if (authorImage != undefined) {
       imageStyle = {
@@ -103,7 +106,18 @@ export default class SingleArticle extends React.Component {
         </ul>
       </div>
       <div className={this.state.isMobile ? "contact-details-mobile" : "contact-details"}>
-        <div className="contact-image"style={imageStyle}/>
+        <Link className="contact-image"style={imageStyle} to={{
+          pathname: `/team/${authorName.toLowerCase().split(" ")[0]}`,
+          state: {
+            fromParent: {
+              name: authorName,
+              id: authorId,
+              job: authorJob,
+              image: authorImage,
+              description: authorDescription
+            }
+          }
+        }}/>
         <h2>{authorName.toUpperCase()}</h2>
         <p>{authorJob}</p>
         <div className="contact">

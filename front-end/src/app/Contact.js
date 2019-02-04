@@ -51,7 +51,7 @@ export default class Contact extends React.Component {
       }
       else {
         $.ajax({
-          url: "https://formspree.io/info@agileadvantage.consulting",
+          url: "https://formspree.io/info@agileadvantage.ae",
           method: "POST",
           data: {
             Name: firstName + " " + lastName,
@@ -81,7 +81,7 @@ export default class Contact extends React.Component {
         </div>
         <div className={this.state.isMobile ? "contact-content mobile" : "contact-content"}>
         <h1 className="gray-header">CONTACT</h1>
-        <p>For a complimentary introductory meeting please complete the form below: </p>
+        <p>For a complimentary introductory meeting, please complete the form below: </p>
         <form id="contact-form" method="POST">
             <div className="name-fields">
               <div className="form-group">
@@ -114,7 +114,7 @@ export default class Contact extends React.Component {
         <div className={this.state.isMobile ? "contact-details-mobile" : "contact-details"}>
           <h2>Agile Advantage Consulting DMCC</h2>
           <p className="spaced">+971 (0) 55 293 2600</p>
-          <p className="spaced">info@agileadvantage.consulting</p>
+          <p className="spaced">info@agileadvantage.ae</p>
         </div>
       </div>
     )

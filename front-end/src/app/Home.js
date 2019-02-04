@@ -42,8 +42,7 @@ export default class Home extends React.Component {
           "https://public-api.wordpress.com/rest/v1/sites/agileadvantage462538617.wordpress.com/posts"
         )
         .then(res => {
-          console.log(res.data.posts);
-          if (res.data.posts.length == 3) {
+          if (res.data.posts.length >= 3) {
             this.setState({ newestPost: res.data.posts[0], otherPosts: [res.data.posts[1], res.data.posts[2]]});
           }
           else if (res.data.posts.length == 2) {
@@ -65,7 +64,6 @@ export default class Home extends React.Component {
       if (this.state.otherPosts.length == 0) {
         isSingle = {
             width: '80%',
-            paddingLeft: '10%',
             fontSize: '2.5vw'
         };
       }

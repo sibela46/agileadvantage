@@ -15,7 +15,7 @@ const Footer = () => (
     </Link>
     <h1>|</h1>
     <h1>WEB DESIGN</h1>
-    <h2>chasingshadows.com</h2>
+    <a href="http://www.chasing-shadows.com"><h2>chasing-shadows.com</h2></a>
   </div>
   </div>
 )
