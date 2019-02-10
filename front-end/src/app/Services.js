@@ -58,7 +58,7 @@ export default class Services extends React.Component {
                 fromParent: {name, id, description}
               }
             }}>
-            <img src={require(`${image}`)} alt="single-service-image"/>
+            <img src={require(`${image}`)}/>
             <span>{name}</span>
             </Link>
           ))}

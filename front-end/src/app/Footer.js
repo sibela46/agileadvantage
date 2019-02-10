@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Footer = () => (
   <div className="footer">
   <div className="agile-company">
-    <span>© 2018</span>
+    <span>© 2019</span>
     <h1>AGILE ADVANTAGE CONSULTING</h1>
     <span>All rights reserved</span>
   </div>

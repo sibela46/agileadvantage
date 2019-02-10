@@ -54,7 +54,6 @@ export default class Insights extends Component {
   handleTagChange(event) {
     var chosenTag = event.target.innerHTML.toLowerCase();
     var tags = document.getElementsByClassName('tag');
-    console.log(tags);
     for (var i=0; i < tags.length; i++) {
       if (tags[i].innerHTML.toLowerCase() == chosenTag) {
         tags[i].className = (tags[i].className == "tag active-tag") ? "tag" : "tag active-tag";
@@ -93,8 +92,17 @@ export default class Insights extends Component {
 
     return filteredPosts;
   }
-  handleCheck(val) {
-    return this.state.tags.some(item => val === item);
+  handleCheck(val, list) {
+    return list.some(item => val === item);
+  }
+  checkDuplicateTags(tags, tagName) {
+    var duplicate = false;
+    for (var i = 0; i < tags.length; i++) {
+      if (tags[i].name == tagName) {
+        duplicate = true;
+      }
+    }
+    return duplicate;
   }
   getAllTags() {
     var posts = this.state.posts;
@@ -102,22 +110,16 @@ export default class Insights extends Component {
     for (var i = 0; i < posts.length; i++) {
       var individualTags = posts[i].tags;
       var numTags = Object.keys(individualTags).length;
-      console.log(individualTags);
       for (var j = 0; j < numTags; j++){
         if (!(Object.keys(individualTags).length === 0 && individualTags.constructor === Object)) {
           var tagName = individualTags[Object.keys(individualTags)[j]].name.toLowerCase();
           var tagCount = individualTags[Object.keys(individualTags)[j]].post_count;
-          console.log(tagName);
-          if (!this.handleCheck(tagName)) {
+          
+          if (!this.handleCheck(tagName, this.state.tags)) {
             this.state.tags.push(tagName);
           }
-          var exists = false;
-          for (var i=0; i < tags.length; i++) {
-            if (tags[i].name == tagName) {
-              exists = true;
-            }
-          }
-          if (!exists) {
+
+          if (!this.checkDuplicateTags(tags, tagName)) {
             tags.push({name: tagName, count: tagCount});
           }
         }
