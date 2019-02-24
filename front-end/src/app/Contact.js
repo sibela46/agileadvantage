@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import swal from 'sweetalert'
 import $ from 'jquery'
 
@@ -110,11 +109,11 @@ export default class Contact extends React.Component {
               <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>SUBMIT</button>
             </div>
         </form>
-        </div>
         <div className={this.state.isMobile ? "contact-details-mobile" : "contact-details"}>
           <h2>Agile Advantage Consulting DMCC</h2>
           <p className="spaced">+971 (0) 55 293 2600</p>
           <p className="spaced">info@agileadvantage.ae</p>
+        </div>
         </div>
       </div>
     )

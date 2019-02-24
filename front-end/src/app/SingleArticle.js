@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from "axios"
 import {Link} from 'react-router-dom'
 import people from './data/all-people'
 
@@ -7,7 +8,9 @@ export default class SingleArticle extends React.Component {
     super(props);
     this.state = {
       windowWidth:  window.document.documentElement.clientWidth,
-      isMobile: false
+      isMobile: false,
+      posts: [],
+      singlePost: []
     }
   }
   toggleState() {
@@ -34,7 +37,8 @@ export default class SingleArticle extends React.Component {
       windowWidth: window.document.documentElement.clientWidth
     });
     window.addEventListener("resize", this.onResize);
-    this.toggleState();
+    this.toggleState();    
+    this.findData(this.props.match.params.id);
   }
   onResize() {
     this.windowWidth = window.document.documentElement.clientWidth;
@@ -68,24 +72,59 @@ export default class SingleArticle extends React.Component {
     }
     return details;
   }
-  render() {
-    let self = this.props.location.state.fromParent;
-    var authorName = self.author.first_name + " " + self.author.last_name;
-    var authorJob = this.getAuthorDetails(authorName)[0];
-    var authorImage = this.getAuthorDetails(authorName)[1];
-    var authorId = this.getAuthorDetails(authorName)[2];
-    var authorDescription = this.getAuthorDetails(authorName)[3];
+  findData(id) {
+    var posts = []
+    axios
+    .get(
+      "https://public-api.wordpress.com/rest/v1/sites/agileadvantage462538617.wordpress.com/posts"
+    )
+    .then(res => {
+      posts = res.data.posts
+      posts.map((post) => {
+        if (post.slug == id) {
+          this.setState({
+            singlePost: post
+          })
+        }
+      })
+    })
+    .catch(error => console.log(error));
+  }
+  render() {    
+    let self = null;
+    var authorName = "";
+    var authorJob = "";
+    var authorImage = "";
+    var authorId = "";
+    var authorDescription = "";
     var imageStyle = {};
-    if (authorImage != undefined) {
+    var image = "./app/img/Banners/AAC-insigths.jpg";
+    var title = "";
+    var image = "";
+    var tags = [];
+    var summary = "";
+    var date = "";
+    var content = "";
+    if (this.state.singlePost.length != 0) {
+      self = this.state.singlePost;
+      authorName = self.author.first_name + " " + self.author.last_name;
+      authorJob = this.getAuthorDetails(authorName)[0];
+      authorImage = this.getAuthorDetails(authorName)[1];
+      authorId = this.getAuthorDetails(authorName)[2];
+      authorDescription = this.getAuthorDetails(authorName)[3];
+      imageStyle = {};
+      title = self.title;
+      image = self.featured_image;
+      tags = Object.keys(self.tags);
+      summary = this.removeUnicode(self.excerpt);
+      date = self.date;
+      content = self.content;
+    }
+    if (authorImage != "") {
       imageStyle = {
         backgroundImage: `url(${require(`./img/People/${authorImage}`)})`
       };
     }
-    var title = self.title;
-    var image = self.featured_image;
-    var tags = Object.keys(self.tags);
-    var summary = this.removeUnicode(self.excerpt);
-    console.log(self);
     return (
       <div className="single-article">
       <div className="mainpage-banner page" style={{backgroundImage: `url(${image})`}}/>
@@ -94,9 +133,9 @@ export default class SingleArticle extends React.Component {
         <div className="article-summary">{summary}</div>
         <div className="article-data">
           <span>BY:<h3>{authorName.toUpperCase()}</h3></span>
-          <span>PUBLISHED:<h3>{this.formatDate(self.date)}</h3></span>
+          <span>PUBLISHED:<h3>{this.formatDate(date)}</h3></span>
         </div>
-        <div className="article-description" dangerouslySetInnerHTML={{__html: self.content}}/>
+        <div className="article-description" dangerouslySetInnerHTML={{__html: content}}/>
         <ul className="tags">
           {tags.map((tag) => (
             <Link className="tag" to='/insights'>

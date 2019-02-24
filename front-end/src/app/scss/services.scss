@@ -288,8 +288,9 @@
 
 
 .contact-details {
-  margin: 5% 0 0 5%;
+  margin: 3% 0 0 5%;
   width: 20%;
+  left: 0;
   position: absolute;
   color: $agile-purple;
   h2 {
@@ -307,10 +308,11 @@
 }
 
 .contact-details-mobile {
-  margin: 5% 0 0 5%;
-  width: 95%;
+  width: 100%;
+  height: 100%;
   position: relative;
-  margin-bottom: 5%;
+  bottom: 0;
+  margin-bottom: 20%;
   text-align: center;
   color: $agile-purple;
   h2 {
@@ -321,6 +323,7 @@
   p {
     font-size: 0.8em;
     margin: 0;
+    width: 100%;
   }
   .spaced {
     margin-top: 5%;
