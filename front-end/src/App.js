@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Route} from 'react-router-dom';
+import {HashRouter, Route} from 'react-router-dom';
 import Header from './app/Header'
 import Footer from './app/Footer'
 import Home from './app/Home'
@@ -17,7 +17,7 @@ import Terms from './app/Terms'
 class App extends React.Component {
   render() {
     return (
-        <BrowserRouter>
+        <HashRouter>
           <div className="body-hero">
             <Route component={Header}/>
             <Route exact path='/' component={Home}/>
@@ -33,7 +33,7 @@ class App extends React.Component {
             <Route exact path='/terms-and-conditions' component={Terms}/>
             <Route component={Footer}/>
           </div>
-        </BrowserRouter>
+        </HashRouter>
     );
   }
 }
